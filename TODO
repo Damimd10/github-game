@@ -4,7 +4,11 @@ Todo:
   ✔ Configure eslint @started(20-05-12 19:41) @done(20-05-12 19:47) @lasted(6m2s)
   ✔ Configure prettier @started(20-05-12 19:41) @done(20-05-12 19:47) @lasted(6m3s)
   ✔ Configure css framework @started(20-05-12 19:41) @done(20-05-12 20:20) @lasted(39m36s)
-  ☐ Configure apollo client @started(20-05-12 19:41)
+  ✘ Configure apollo client @started(20-05-12 19:41) @cancelled(20-05-13 10:56) @wasted(15h15m16s)
   ☐ Create Achievement Design @started(20-05-12 19:41)
   ☐ Achievement List @started(20-05-12 20:30)
-
+  ✔ Configure Backend API @done(20-05-18 18:48)
+  ✔ Create React Skeleton @done(20-05-18 18:48)
+  ☐ Parse Data To Backend
+  ✔ Create Lambda Function @done(20-05-18 18:48)
+  ✔ Configure Cloud Watch Lambda @done(20-05-18 18:48)
