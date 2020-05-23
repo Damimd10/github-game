@@ -5,7 +5,7 @@
 	"bracketSpacing": true,
 	"endOfLine": "auto",
 	"jsxSingleQuote": false,
-	"semi": false,
+	"semi": true,
 	"singleQuote": true,
 	"useTabs": true,
 	"trailingComma": "es5",

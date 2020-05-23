@@ -4,19 +4,19 @@ import React, {
 	useState,
 	useEffect,
 	useContext,
-} from 'react'
-import createAuth0Client, { Auth0Client } from '@auth0/auth0-spa-js'
+} from 'react';
+import createAuth0Client, { Auth0Client } from '@auth0/auth0-spa-js';
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
-	window.history.replaceState({}, document.title, window.location.pathname)
+	window.history.replaceState({}, document.title, window.location.pathname);
 
 interface Auth0Context {
-	isAuthenticated: boolean
-	loginWithRedirect: () => void
-	loginWithPopup: () => void
-	logout: () => void
-	user: any
-	loading: boolean
+	isAuthenticated: boolean;
+	loginWithRedirect: () => void;
+	loginWithPopup: () => void;
+	logout: () => void;
+	user: unknown;
+	loading: boolean;
 }
 
 export const Auth0Context = createContext<Auth0Context>({
@@ -26,15 +26,15 @@ export const Auth0Context = createContext<Auth0Context>({
 	logout: () => {},
 	user: undefined,
 	loading: false,
-})
+});
 
-export const useAuth0 = () => useContext(Auth0Context)
+export const useAuth0 = () => useContext(Auth0Context);
 
 interface Props {
-	onRedirectCallback?: (appState: {}) => void
-	domain: string
-	client_id: string
-	redirect_uri?: string
+	onRedirectCallback?: (appState: {}) => void;
+	domain: string;
+	client_id: string;
+	redirect_uri?: string;
 }
 
 export const Auth0Provider: FC<Props> = ({
@@ -44,11 +44,11 @@ export const Auth0Provider: FC<Props> = ({
 	client_id,
 	redirect_uri,
 }) => {
-	const [isAuthenticated, setIsAuthenticated] = useState(false)
-	const [user, setUser] = useState()
-	const [auth0Client, setAuth0] = useState<Auth0Client>()
-	const [loading, setLoading] = useState(true)
-	const [popupOpen, setPopupOpen] = useState(false)
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [user, setUser] = useState();
+	const [auth0Client, setAuth0] = useState<Auth0Client>();
+	const [loading, setLoading] = useState(true);
+	const [popupOpen, setPopupOpen] = useState(false);
 
 	useEffect(() => {
 		const initAuth0 = async () => {
@@ -56,57 +56,57 @@ export const Auth0Provider: FC<Props> = ({
 				domain,
 				client_id,
 				redirect_uri,
-			})
+			});
 
-			setAuth0(auth0FromHook)
+			setAuth0(auth0FromHook);
 
 			if (
 				window.location.search.includes('code=') &&
 				window.location.search.includes('state=')
 			) {
-				const { appState } = await auth0FromHook.handleRedirectCallback()
-				onRedirectCallback(appState)
+				const { appState } = await auth0FromHook.handleRedirectCallback();
+				onRedirectCallback(appState);
 			}
 
-			const isAuthenticated = await auth0FromHook.isAuthenticated()
+			const isAuthenticated = await auth0FromHook.isAuthenticated();
 
-			setIsAuthenticated(isAuthenticated)
+			setIsAuthenticated(isAuthenticated);
 
 			if (isAuthenticated) {
-				const user = await auth0FromHook.getUser()
-				setUser(user)
+				const user = await auth0FromHook.getUser();
+				setUser(user);
 			}
 
-			setLoading(false)
-		}
-		initAuth0()
+			setLoading(false);
+		};
+		initAuth0();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	}, []);
 
-	if (!auth0Client) return null
+	if (!auth0Client) return null;
 
 	const loginWithPopup = async (params = {}) => {
-		setPopupOpen(true)
+		setPopupOpen(true);
 		try {
-			await auth0Client.loginWithPopup(params)
+			await auth0Client.loginWithPopup(params);
 		} catch (error) {
-			console.error(error)
+			console.error(error);
 		} finally {
-			setPopupOpen(false)
+			setPopupOpen(false);
 		}
-		const user = await auth0Client.getUser()
-		setUser(user)
-		setIsAuthenticated(true)
-	}
+		const user = await auth0Client.getUser();
+		setUser(user);
+		setIsAuthenticated(true);
+	};
 
 	const handleRedirectCallback = async () => {
-		setLoading(true)
-		await auth0Client.handleRedirectCallback()
-		const user = await auth0Client.getUser()
-		setLoading(false)
-		setIsAuthenticated(true)
-		setUser(user)
-	}
+		setLoading(true);
+		await auth0Client.handleRedirectCallback();
+		const user = await auth0Client.getUser();
+		setLoading(false);
+		setIsAuthenticated(true);
+		setUser(user);
+	};
 
 	return (
 		<Auth0Context.Provider
@@ -132,5 +132,5 @@ export const Auth0Provider: FC<Props> = ({
 		>
 			{children}
 		</Auth0Context.Provider>
-	)
-}
+	);
+};

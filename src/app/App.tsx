@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { PrivateRoute } from '../utils'
+import React, { FC } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { PrivateRoute } from '../utils';
 
-import { DashboardScreen, LoginScreen } from '../screens'
+import { DashboardScreen, LoginScreen } from '../screens';
 
 const App: FC = () => {
 	return (
@@ -15,7 +15,7 @@ const App: FC = () => {
 				</Switch>
 			</BrowserRouter>
 		</main>
-	)
-}
+	);
+};
 
-export default App
+export default App;
