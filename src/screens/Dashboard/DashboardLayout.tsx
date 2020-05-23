@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { useAuth0 } from '../../utils';
 
 import Achievement from './components/Achievement';
+import Ranking from './components/Ranking';
 import Stat from './components/Stat';
 
 const DashboardLayout: FC = () => {
@@ -36,6 +37,7 @@ const DashboardLayout: FC = () => {
 						<Achievement key={JSON.stringify(achievement)} {...achievement} />
 					))}
 				</div>
+				<Ranking />
 			</section>
 		</section>
 	);
