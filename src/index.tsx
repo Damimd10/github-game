@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import App from './app';
 import * as serviceWorker from './serviceWorker';
 
-import { Auth0Provider } from './utils';
-import config from './config';
+// import { Auth0Provider } from './utils';
+// import config from './config';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Auth0Provider
+		{/* <Auth0Provider
 			domain={config.domain}
 			client_id={config.clientId}
 			redirect_uri={config.redirectURI}
-		>
-			<App />
-		</Auth0Provider>
+		> */}
+		<App />
+		{/* </Auth0Provider> */}
 	</React.StrictMode>,
 	document.getElementById('root')
 );

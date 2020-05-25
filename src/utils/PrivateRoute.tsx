@@ -1,15 +1,24 @@
 import React, { FC, ComponentProps } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { useAuth0 } from './Auth0';
 
 const PrivateRoute: FC<ComponentProps<typeof Route>> = props => {
-	const { isAuthenticated } = useAuth0();
+	try {
+		const json = localStorage.getItem('ghg');
 
-	console.log('isAuthenticated private route', isAuthenticated);
+		if (!json) {
+			return <Redirect to="/login" />;
+		}
 
-	console.log('privateRoute props', props);
+		const { token, login } = JSON.parse(json);
 
-	return isAuthenticated ? <Route {...props} /> : <Redirect to="/login" />;
+		if (!token || !login) {
+			return <Redirect to="/login" />;
+		}
+
+		return <Route {...props} />;
+	} catch {
+		return <Redirect to="/login" />;
+	}
 };
 
 export default PrivateRoute;

@@ -1,28 +1,19 @@
-import React, { FC, useEffect } from 'react'
-import { useAuth0 } from '../../utils'
-import { Redirect } from 'react-router-dom'
+import React, { FC } from 'react';
+import { v4 as uuid } from 'uuid';
+import config from '../../config';
 
 const Login: FC = () => {
-	const { isAuthenticated, loginWithRedirect } = useAuth0()
+	const login = () => {
+		const ghState = uuid();
+		localStorage.setItem('ghgs', ghState);
+		window.location.href = `https://github.com/login/oauth/authorize?client_id=${config.GITHUB_CLIENT}&redirect_uri=${config.GITHUB_REDIRECT}&scope=user:email&state=${ghState}`;
+	};
 
-	const isRedirectedFromAuth =
-		window.location.search.includes('code=') &&
-		window.location.search.includes('state=')
+	return (
+		<div className="container mx-auto">
+			<button onClick={() => login()}>Sign in with GitHub</button>
+		</div>
+	);
+};
 
-	console.log('isAuthenticated login', isAuthenticated)
-
-	useEffect(() => {
-		if (!isAuthenticated && !isRedirectedFromAuth) {
-			loginWithRedirect()
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
-
-	if (isAuthenticated) {
-		return <Redirect to="/dashboard" />
-	}
-
-	return null
-}
-
-export default Login
+export default Login;

@@ -1,6 +1,5 @@
 // TODO: use env vars
 export default {
-	domain: 'dev-ojjv15hy.auth0.com',
-	clientId: 'gXz6XKLvlNJ3JkE6Yhlp29OwBvEEKzwp',
-	redirectURI: 'http://localhost:3002/login',
+	GITHUB_CLIENT: '8c2a68ad8b41d5f326cf',
+	GITHUB_REDIRECT: 'http://localhost:4000/api/github-callback',
 };

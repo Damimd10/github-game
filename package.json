@@ -12,11 +12,14 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "node-sass": "^4.14.1",
+    "query-string": "^6.12.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-github-login": "^1.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "uuid": "^8.1.0"
   },
   "scripts": {
     "build": "npm run tailwind:css && react-scripts build",
@@ -55,9 +58,10 @@
   },
   "devDependencies": {
     "@types/morgan": "^1.9.0",
-    "@types/react-router-dom": "^5.1.5",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
     "babel-eslint": "10.1.0",
