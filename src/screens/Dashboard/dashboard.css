@@ -1,0 +1,29 @@
+main {
+	background-color: #1c1d29;
+}
+
+.custom-col {
+	background-color: #252635;
+}
+
+.font-custom-common {
+	font-family: 'TT Commons';
+}
+
+.font-circular {
+	font-family: 'Circular Std';
+}
+
+.progress-section {
+	background-color: #1a1b26;
+}
+
+.progress-square {
+	background-color: #303653;
+}
+
+.progress-bg {
+	background-color: #20253e;
+}
+
+/* Achievements */

@@ -1,9 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import Achievement from './components/Achievement';
-import Ranking from './components/Ranking';
-import Stat from './components/Stat';
+import Achievements from './components/Achievements';
+import Column from './components/Column';
+import Profile from './components/Profile';
+
+import './dashboard.css';
 
 const DashboardLayout: FC = () => {
 	const history = useHistory();
@@ -17,37 +19,25 @@ const DashboardLayout: FC = () => {
 			.then(response => setAchievements(response.achievements_unlocked));
 	}, [login]);
 
-	const score = achievements.reduce(
-		(accumulator, { score }) => accumulator + score,
-		0
-	);
-
-	const logout = () => {
+	/* const logout = () => {
 		localStorage.removeItem('ghg');
 		history.push('/login');
-	};
+	}; */
 
 	return (
-		<section className="m-2 flex justify-content-center align-items-center">
-			<section className="w-full text-gray-700 body-font">
-				<div className="m-2">
-					<button onClick={() => logout()}>Welcome {login} - LOGOUT</button>
-					<div className="container px-2 py-2 mx-auto">
-						<div className="flex flex-wrap text-center">
-							<Stat label="score" value={score} />
-							<Stat label="unlocked achievements" value={achievements.length} />
-							<Stat label="locked achievements" value={0} />
-						</div>
-					</div>
-				</div>
-				<div className="w-full flex flex-wrap m-2">
-					{achievements.map(achievement => (
-						<Achievement key={JSON.stringify(achievement)} {...achievement} />
-					))}
-				</div>
-				<Ranking />
-			</section>
-		</section>
+		<main className="h-screen w-full flex flex-wrap">
+			<Column size="1/4">
+				<Profile />
+			</Column>
+
+			<Column size="1/2">
+				<Achievements />
+			</Column>
+
+			<Column size="1/4">
+				<div className="custom-col">Column 3</div>
+			</Column>
+		</main>
 	);
 };
 

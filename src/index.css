@@ -6061,6 +6061,14 @@ video {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-circular {
+  font-family: Circular Std;
+}
+
+.font-commons {
+  font-family: TT Commons;
+}
+
 .font-hairline {
   font-weight: 100;
 }
@@ -17864,6 +17872,423 @@ video {
   transition-delay: 1000ms;
 }
 
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-LightItalic.eot');
+
+  src: local('TT Commons Light Italic'), local('TTCommons-LightItalic'),
+		url('TTCommons-LightItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-LightItalic.woff2') format('woff2'),
+		url('TTCommons-LightItalic.woff') format('woff'),
+		url('TTCommons-LightItalic.ttf') format('truetype');
+
+  font-weight: 300;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Black.eot');
+
+  src: local('TT Commons Black'), local('TTCommons-Black'),
+		url('TTCommons-Black.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Black.woff2') format('woff2'),
+		url('TTCommons-Black.woff') format('woff'),
+		url('TTCommons-Black.ttf') format('truetype');
+
+  font-weight: 900;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Bold.eot');
+
+  src: local('TT Commons Bold'), local('TTCommons-Bold'),
+		url('TTCommons-Bold.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Bold.woff2') format('woff2'),
+		url('TTCommons-Bold.woff') format('woff'),
+		url('TTCommons-Bold.ttf') format('truetype');
+
+  font-weight: bold;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-DemiBoldItalic.eot');
+
+  src: local('TT Commons DemiBold Italic'), local('TTCommons-DemiBoldItalic'),
+		url('TTCommons-DemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-DemiBoldItalic.woff2') format('woff2'),
+		url('TTCommons-DemiBoldItalic.woff') format('woff'),
+		url('TTCommons-DemiBoldItalic.ttf') format('truetype');
+
+  font-weight: 600;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-BoldItalic.eot');
+
+  src: local('TT Commons Bold Italic'), local('TTCommons-BoldItalic'),
+		url('TTCommons-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-BoldItalic.woff2') format('woff2'),
+		url('TTCommons-BoldItalic.woff') format('woff'),
+		url('TTCommons-BoldItalic.ttf') format('truetype');
+
+  font-weight: bold;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Regular.eot');
+
+  src: local('TT Commons Regular'), local('TTCommons-Regular'),
+		url('TTCommons-Regular.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Regular.woff2') format('woff2'),
+		url('TTCommons-Regular.woff') format('woff'),
+		url('TTCommons-Regular.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-ExtraBold.eot');
+
+  src: local('TT Commons ExtraBold'), local('TTCommons-ExtraBold'),
+		url('TTCommons-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-ExtraBold.woff2') format('woff2'),
+		url('TTCommons-ExtraBold.woff') format('woff'),
+		url('TTCommons-ExtraBold.ttf') format('truetype');
+
+  font-weight: 800;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Italic.eot');
+
+  src: local('TT Commons Italic'), local('TTCommons-Italic'),
+		url('TTCommons-Italic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Italic.woff2') format('woff2'),
+		url('TTCommons-Italic.woff') format('woff'),
+		url('TTCommons-Italic.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-ExtraLight.eot');
+
+  src: local('TT Commons ExtraLight'), local('TTCommons-ExtraLight'),
+		url('TTCommons-ExtraLight.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-ExtraLight.woff2') format('woff2'),
+		url('TTCommons-ExtraLight.woff') format('woff'),
+		url('TTCommons-ExtraLight.ttf') format('truetype');
+
+  font-weight: 200;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-MediumItalic.eot');
+
+  src: local('TT Commons Medium Italic'), local('TTCommons-MediumItalic'),
+		url('TTCommons-MediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-MediumItalic.woff2') format('woff2'),
+		url('TTCommons-MediumItalic.woff') format('woff'),
+		url('TTCommons-MediumItalic.ttf') format('truetype');
+
+  font-weight: 500;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Thin.eot');
+
+  src: local('TT Commons Thin'), local('TTCommons-Thin'),
+		url('TTCommons-Thin.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Thin.woff2') format('woff2'),
+		url('TTCommons-Thin.woff') format('woff'),
+		url('TTCommons-Thin.ttf') format('truetype');
+
+  font-weight: 100;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-ExtraLightItalic.eot');
+
+  src: local('TT Commons ExtraLight Italic'),
+		local('TTCommons-ExtraLightItalic'),
+		url('TTCommons-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-ExtraLightItalic.woff2') format('woff2'),
+		url('TTCommons-ExtraLightItalic.woff') format('woff'),
+		url('TTCommons-ExtraLightItalic.ttf') format('truetype');
+
+  font-weight: 200;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-ExtraBoldItalic.eot');
+
+  src: local('TT Commons ExtraBold Italic'), local('TTCommons-ExtraBoldItalic'),
+		url('TTCommons-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-ExtraBoldItalic.woff2') format('woff2'),
+		url('TTCommons-ExtraBoldItalic.woff') format('woff'),
+		url('TTCommons-ExtraBoldItalic.ttf') format('truetype');
+
+  font-weight: 800;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Medium.eot');
+
+  src: local('TT Commons Medium'), local('TTCommons-Medium'),
+		url('TTCommons-Medium.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Medium.woff2') format('woff2'),
+		url('TTCommons-Medium.woff') format('woff'),
+		url('TTCommons-Medium.ttf') format('truetype');
+
+  font-weight: 500;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-BlackItalic.eot');
+
+  src: local('TT Commons Black Italic'), local('TTCommons-BlackItalic'),
+		url('TTCommons-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-BlackItalic.woff2') format('woff2'),
+		url('TTCommons-BlackItalic.woff') format('woff'),
+		url('TTCommons-BlackItalic.ttf') format('truetype');
+
+  font-weight: 900;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-Light.eot');
+
+  src: local('TT Commons Light'), local('TTCommons-Light'),
+		url('TTCommons-Light.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-Light.woff2') format('woff2'),
+		url('TTCommons-Light.woff') format('woff'),
+		url('TTCommons-Light.ttf') format('truetype');
+
+  font-weight: 300;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-DemiBold.eot');
+
+  src: local('TT Commons DemiBold'), local('TTCommons-DemiBold'),
+		url('TTCommons-DemiBold.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-DemiBold.woff2') format('woff2'),
+		url('TTCommons-DemiBold.woff') format('woff'),
+		url('TTCommons-DemiBold.ttf') format('truetype');
+
+  font-weight: 600;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Commons';
+
+  src: url('TTCommons-ThinItalic.eot');
+
+  src: local('TT Commons Thin Italic'), local('TTCommons-ThinItalic'),
+		url('TTCommons-ThinItalic.eot?#iefix') format('embedded-opentype'),
+		url('TTCommons-ThinItalic.woff2') format('woff2'),
+		url('TTCommons-ThinItalic.woff') format('woff'),
+		url('TTCommons-ThinItalic.ttf') format('truetype');
+
+  font-weight: 100;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+
+  src: url('CircularStd-MediumItalic.eot');
+
+  src: local('Circular Std Medium Italic'), local('CircularStd-MediumItalic'),
+		url('CircularStd-MediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-MediumItalic.woff2') format('woff2'),
+		url('CircularStd-MediumItalic.woff') format('woff'),
+		url('CircularStd-MediumItalic.ttf') format('truetype');
+
+  font-weight: 500;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+
+  src: url('CircularStd-Black.eot');
+
+  src: local('Circular Std Black'), local('CircularStd-Black'),
+		url('CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Black.woff2') format('woff2'),
+		url('CircularStd-Black.woff') format('woff'),
+		url('CircularStd-Black.ttf') format('truetype');
+
+  font-weight: 900;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+
+  src: url('CircularStd-Medium.eot');
+
+  src: local('Circular Std Medium'), local('CircularStd-Medium'),
+		url('CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Medium.woff2') format('woff2'),
+		url('CircularStd-Medium.woff') format('woff'),
+		url('CircularStd-Medium.ttf') format('truetype');
+
+  font-weight: 500;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+
+  src: url('CircularStd-Bold.eot');
+
+  src: local('Circular Std Bold'), local('CircularStd-Bold'),
+		url('CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Bold.woff2') format('woff2'),
+		url('CircularStd-Bold.woff') format('woff'),
+		url('CircularStd-Bold.ttf') format('truetype');
+
+  font-weight: bold;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+
+  src: url('CircularStd-BlackItalic.eot');
+
+  src: local('Circular Std Black Italic'), local('CircularStd-BlackItalic'),
+		url('CircularStd-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-BlackItalic.woff2') format('woff2'),
+		url('CircularStd-BlackItalic.woff') format('woff'),
+		url('CircularStd-BlackItalic.ttf') format('truetype');
+
+  font-weight: 900;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Circular Std Book';
+
+  src: url('CircularStd-BookItalic.eot');
+
+  src: local('Circular Std Book Italic'), local('CircularStd-BookItalic'),
+		url('CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-BookItalic.woff2') format('woff2'),
+		url('CircularStd-BookItalic.woff') format('woff'),
+		url('CircularStd-BookItalic.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+
+  src: url('CircularStd-BoldItalic.eot');
+
+  src: local('Circular Std Bold Italic'), local('CircularStd-BoldItalic'),
+		url('CircularStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-BoldItalic.woff2') format('woff2'),
+		url('CircularStd-BoldItalic.woff') format('woff'),
+		url('CircularStd-BoldItalic.ttf') format('truetype');
+
+  font-weight: bold;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Circular Std Book';
+
+  src: url('CircularStd-Book.eot');
+
+  src: local('Circular Std Book'), local('CircularStd-Book'),
+		url('CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Book.woff2') format('woff2'),
+		url('CircularStd-Book.woff') format('woff'),
+		url('CircularStd-Book.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
@@ -23305,6 +23730,14 @@ video {
 
   .sm\:font-mono {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .sm\:font-circular {
+    font-family: Circular Std;
+  }
+
+  .sm\:font-commons {
+    font-family: TT Commons;
   }
 
   .sm\:font-hairline {
@@ -40554,6 +40987,14 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .md\:font-circular {
+    font-family: Circular Std;
+  }
+
+  .md\:font-commons {
+    font-family: TT Commons;
+  }
+
   .md\:font-hairline {
     font-weight: 100;
   }
@@ -57801,6 +58242,14 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .lg\:font-circular {
+    font-family: Circular Std;
+  }
+
+  .lg\:font-commons {
+    font-family: TT Commons;
+  }
+
   .lg\:font-hairline {
     font-weight: 100;
   }
@@ -75046,6 +75495,14 @@ video {
 
   .xl\:font-mono {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .xl\:font-circular {
+    font-family: Circular Std;
+  }
+
+  .xl\:font-commons {
+    font-family: TT Commons;
   }
 
   .xl\:font-hairline {
