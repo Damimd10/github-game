@@ -6,7 +6,6 @@ type ProgressBarProps = {
 };
 
 const ProgressBar: FC<ProgressBarProps> = ({ color, progress }) => {
-	console.log('HERE', progress);
 	return (
 		<div className="h-4 shadow rounded-lg progress-bg">
 			<div

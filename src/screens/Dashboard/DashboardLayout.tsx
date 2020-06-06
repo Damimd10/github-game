@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Achievements from './components/Achievements';
 import Column from './components/Column';
 import Profile from './components/Profile';
+import Ranking from './components/Ranking';
 
 import './dashboard.css';
 
@@ -35,7 +36,7 @@ const DashboardLayout: FC = () => {
 			</Column>
 
 			<Column size="1/4">
-				<div className="custom-col">Column 3</div>
+				<Ranking />
 			</Column>
 		</main>
 	);
