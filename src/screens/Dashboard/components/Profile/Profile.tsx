@@ -32,7 +32,7 @@ const Profile: FC = () => {
 			</section>
 			<section className="py-6">
 				<div className="flex h-20 p-2 progress-section">
-					<div className="h-full w-24 rounded-lg progress-square" />
+					<div className="h-full w-24 rounded-lg bg-box" />
 					<div className="w-full flex flex-col justify-center px-4">
 						<div className="w-full flex justify-between items-center">
 							<span className="text-lg text-white font-medium font-custom-common">

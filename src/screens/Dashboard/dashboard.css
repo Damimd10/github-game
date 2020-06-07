@@ -18,12 +18,12 @@ main {
 	background-color: #1a1b26;
 }
 
-.progress-square {
-	background-color: #303653;
-}
-
 .progress-bg {
 	background-color: #20253e;
+}
+
+.bg-box {
+	background-color: #353647;
 }
 
 /* Achievements */

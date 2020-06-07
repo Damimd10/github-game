@@ -5,9 +5,9 @@ type AchievementProp = {
 };
 
 const Achievement: FC<AchievementProp> = ({ unlocked }) => (
-	<>
-		<div className="h-20 w-24 rounded-lg progress-square" />
-		<div className="h-20 w-full p-2 rounded-lg progress-square">
+	<section className="flex space-x-4 items-center">
+		<div className="h-20 w-24 rounded-lg bg-box" />
+		<div className="h-20 w-full p-2 rounded-lg bg-box">
 			<div className="flex justify-between items-center">
 				<div className="text-lg text-white font-semibold font-custom-common">
 					Achievement One
@@ -24,7 +24,7 @@ const Achievement: FC<AchievementProp> = ({ unlocked }) => (
 				industry. Lorem Ipsum
 			</div>
 		</div>
-	</>
+	</section>
 );
 
 export default Achievement;

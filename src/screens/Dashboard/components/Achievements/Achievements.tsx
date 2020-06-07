@@ -44,8 +44,9 @@ const Achievements: FC<{}> = () => {
 					))}
 				</div>
 				<section>
-					<div className="flex items-center space-x-2">
+					<div className="space-y-6 flex flex-col justify-center">
 						<Achievement unlocked />
+						<Achievement />
 					</div>
 				</section>
 			</section>
