@@ -4,6 +4,8 @@ import Achievement from '../Achievement';
 import ProgressBar from '../ProgressBar';
 import Tab from '../Tab';
 
+import achievementIcon from '../../../../icons/achievement.svg';
+
 enum Tabs {
 	Unlocked = 'Unlocked',
 	Locked = 'Locked',
@@ -13,17 +15,21 @@ enum Tabs {
 const Achievements: FC<{}> = () => {
 	const [activeTab, setActiveTab] = useState<Tabs>(Tabs.Locked);
 
-	const handleSelect = (e: any) => setActiveTab(e.target.dataset.id);
+	const handleSelect = (e: React.MouseEvent<HTMLElement>) =>
+		setActiveTab((e.target as any).dataset.id);
 
 	return (
 		<>
 			<section className="rounded-t-lg px-6 custom-col">
 				<header className="py-4 flex justify-between items-center">
-					<div className="text-3xl text-white font-semibold font-custom-common">
-						Achievements
+					<div className="flex items-center space-x-4">
+						<img alt="Achievements" src={achievementIcon} />
+						<span className="text-3xl text-white font-semibold">
+							Achievements
+						</span>
 					</div>
 					<div className="space-y-4">
-						<div className="text-md text-white font-semibold font-custom-common">
+						<div className="text-md text-white font-semibold">
 							150 of 250 (60%) Achievements Done
 						</div>
 						<div>
@@ -47,6 +53,7 @@ const Achievements: FC<{}> = () => {
 					<div className="space-y-6 flex flex-col justify-center">
 						<Achievement unlocked />
 						<Achievement />
+						<Achievement hidden />
 					</div>
 				</section>
 			</section>

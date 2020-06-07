@@ -27,4 +27,7 @@ main {
 	background-color: #303653;
 }
 
-/* Achievements */
+.lock-box {
+	left: 75%;
+	bottom: 15%;
+}

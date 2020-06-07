@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 type TabProps = {
 	active?: boolean;
-	onSelect: (e: unknown) => void;
+	onSelect: (e: React.MouseEvent<HTMLElement>) => void;
 	title: string;
 };
 
