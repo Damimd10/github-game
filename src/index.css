@@ -6061,11 +6061,7 @@ video {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.font-circular {
-  font-family: Circular Std;
-}
-
-.font-commons {
+.font-body {
   font-family: TT Commons;
 }
 
@@ -23732,11 +23728,7 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .sm\:font-circular {
-    font-family: Circular Std;
-  }
-
-  .sm\:font-commons {
+  .sm\:font-body {
     font-family: TT Commons;
   }
 
@@ -40987,11 +40979,7 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .md\:font-circular {
-    font-family: Circular Std;
-  }
-
-  .md\:font-commons {
+  .md\:font-body {
     font-family: TT Commons;
   }
 
@@ -58242,11 +58230,7 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .lg\:font-circular {
-    font-family: Circular Std;
-  }
-
-  .lg\:font-commons {
+  .lg\:font-body {
     font-family: TT Commons;
   }
 
@@ -75497,11 +75481,7 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .xl\:font-circular {
-    font-family: Circular Std;
-  }
-
-  .xl\:font-commons {
+  .xl\:font-body {
     font-family: TT Commons;
   }
 

@@ -19,7 +19,7 @@ const Achievements: FC<{}> = () => {
 		<>
 			<section className="rounded-t-lg px-6 custom-col">
 				<header className="py-4 flex justify-between items-center">
-					<div className="text-3xl font-custom-common text-white font-semibold">
+					<div className="text-3xl text-white font-semibold font-custom-common">
 						Achievements
 					</div>
 					<div className="space-y-4">

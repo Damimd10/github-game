@@ -1,13 +1,10 @@
 main {
 	background-color: #1c1d29;
+	font-family: 'TT Commons';
 }
 
 .custom-col {
 	background-color: #252635;
-}
-
-.font-custom-common {
-	font-family: 'TT Commons';
 }
 
 .font-circular {
@@ -15,7 +12,7 @@ main {
 }
 
 .progress-section {
-	background-color: #1a1b26;
+	background-color: #191a25;
 }
 
 .progress-bg {
@@ -23,7 +20,11 @@ main {
 }
 
 .bg-box {
-	background-color: #353647;
+	background-color: #343547;
+}
+
+.bg-box-blue {
+	background-color: #303653;
 }
 
 /* Achievements */

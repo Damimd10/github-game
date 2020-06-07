@@ -10,7 +10,7 @@ type TabProps = {
 const Tab: FC<TabProps> = ({ active, onSelect, title }) => {
 	const linkActiveClass = 'text-xl text-yellow-600 opacity-100';
 	const linkClass =
-		'text-lg text-white font-semibold opacity-50 font-custom-common cursor-pointer hover:opacity-100 hover:text-yellow-500';
+		'text-lg text-white font-semibold opacity-50 cursor-pointer hover:opacity-100 hover:text-yellow-500';
 
 	const className = active ? cn(linkClass, linkActiveClass) : linkClass;
 

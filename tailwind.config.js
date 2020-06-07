@@ -259,8 +259,7 @@ module.exports = {
 				'"Courier New"',
 				'monospace',
 			],
-			circular: 'Circular Std',
-			commons: 'TT Commons',
+			body: ['TT Commons'],
 		},
 		fontSize: {
 			'xs': '0.75rem',

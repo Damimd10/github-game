@@ -17,7 +17,7 @@ const Profile: FC = () => {
 						</div>
 					</div>
 					<div>
-						<div className="text-xl text-white font-light italic font-custom-common">
+						<div className="text-xl text-white font-light italic">
 							Good morning
 						</div>
 						<div className="text-3xl text-white font-bold font-circular">
@@ -26,19 +26,19 @@ const Profile: FC = () => {
 					</div>
 				</div>
 			</section>
-			<section className="mt-6 text-lg text-white font-custom-common font-normal opacity-50">
+			<section className="mt-6 text-lg text-white  font-normal opacity-50">
 				<div>Welcome back to your dashboard.</div>
 				<div>Happy Coding!</div>
 			</section>
 			<section className="py-6">
 				<div className="flex h-20 p-2 progress-section">
-					<div className="h-full w-24 rounded-lg bg-box" />
+					<div className="h-full w-24 rounded-lg bg-box-blue" />
 					<div className="w-full flex flex-col justify-center px-4">
 						<div className="w-full flex justify-between items-center">
-							<span className="text-lg text-white font-medium font-custom-common">
+							<span className="text-lg text-white font-medium ">
 								Achievements
 							</span>
-							<span className="text-lg text-white font-medium font-custom-common opacity-25">
+							<span className="text-lg text-white font-medium  opacity-25">
 								65%
 							</span>
 						</div>

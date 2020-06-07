@@ -26,7 +26,7 @@ const DashboardLayout: FC = () => {
 	}; */
 
 	return (
-		<main className="h-screen w-full flex flex-wrap">
+		<main className="h-screen w-full flex flex-wrap tracking-wide">
 			<Column size="1/4">
 				<Profile />
 			</Column>
