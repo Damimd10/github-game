@@ -31,3 +31,7 @@ main {
 	left: 75%;
 	bottom: 15%;
 }
+
+.profile-box-border {
+	border-color: #3e4b7b;
+}

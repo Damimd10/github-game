@@ -2,9 +2,11 @@ import React, { FC } from 'react';
 
 import ProgressBar from '../ProgressBar';
 
+import locationIcon from '../../../../icons/location.svg';
+
 const Profile: FC = () => {
 	return (
-		<div className="rounded-tl-lg px-6 custom-col">
+		<div className="space-y-4 rounded-tl-lg px-6 custom-col">
 			<section>
 				<div className="flex flex-wrap items-center pt-6">
 					<div className="w-24 h-24 relative mr-5">
@@ -26,9 +28,29 @@ const Profile: FC = () => {
 					</div>
 				</div>
 			</section>
-			<section className="mt-6 text-lg text-white  font-normal opacity-50">
+			<section className="text-lg text-white font-normal opacity-50">
 				<div>Welcome back to your dashboard.</div>
 				<div>Happy Coding!</div>
+			</section>
+			<section className="p-6 flex items-center justify-center border profile-box-border rounded-lg">
+				<div className="p-4 space-x-4 flex items-center rounded-lg">
+					<span className="text-lg text-gray-300">
+						254 Following
+					</span>
+				</div>
+				<div className="p-4 space-x-4 flex items-center bg-box-blue rounded-lg">
+					<span className="text-lg text-gray-300">
+						2130 Followers
+					</span>
+				</div>
+			</section>
+			<section className="p-6 border profile-box-border rounded-lg">
+				<div className="p-4 space-x-4 flex items-center bg-box-blue rounded-lg">
+					<img alt="Location" src={locationIcon} />
+					<span className="text-lg text-gray-300">
+						12/1 Jonathan Street, New York, USA
+					</span>
+				</div>
 			</section>
 			<section className="py-6">
 				<div className="flex h-20 p-2 progress-section">

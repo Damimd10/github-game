@@ -27,15 +27,15 @@ const DashboardLayout: FC = () => {
 
 	return (
 		<main className="h-screen w-full flex flex-wrap tracking-wide">
-			<Column size="1/4">
+			<Column size="1/5">
 				<Profile />
 			</Column>
 
-			<Column size="1/2">
+			<Column size="3/5">
 				<Achievements />
 			</Column>
 
-			<Column size="1/4">
+			<Column size="1/5">
 				<Ranking />
 			</Column>
 		</main>
