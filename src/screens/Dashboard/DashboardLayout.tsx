@@ -12,6 +12,7 @@ interface User {
 	github_username: string;
 	avatar: string;
 	achievements: Achievements
+	score: number
 }
 
 interface Achievements {
@@ -29,39 +30,48 @@ interface Achievement {
 const DashboardLayout: FC = () => {
 	// const history = useHistory();
 	const [user, setUser] = useState<User>();
+	const [ranking, setRanking] = useState<User[]>();
 
 	const { login } = JSON.parse(localStorage.getItem('ghg') as string);
 
 	useEffect(() => {
 		fetch(`http://localhost:4000/api/getUser/${login}`)
 			.then(response => response.json())
-			.then(user => setUser(user));
+			.then(setUser);
 	}, [login]);
+
+	useEffect(() => {
+		fetch(`http://localhost:4000/api/ranking`)
+			.then(response => response.json())
+			.then(setRanking)
+	}, [])
 
 	/* const logout = () => {
 		localStorage.removeItem('ghg');
 		history.push('/login');
 	}; */
 
-	if(!user) {
-		return null
-	}
-
 	return (
 		<main className="h-screen w-full flex flex-wrap tracking-wide">
 			<Column size="1/4">
-				<Profile 
-					name={user.github_username} 
-					avatar={user.avatar} 
-					achievements={user.achievements} />
+				{user && (
+					<Profile 
+						name={user.github_username} 
+						avatar={user.avatar} 
+						achievements={user.achievements} />
+				)}
 			</Column>
 
 			<Column size="1/2">
-				<Achievements achievements={user.achievements} />
+				{user && (
+					<Achievements achievements={user.achievements} />
+				)}
 			</Column>
-
+			
 			<Column size="1/4">
-				<Ranking />
+				{ranking && (
+					<Ranking users={ranking} />
+				)}
 			</Column>
 		</main>
 	);

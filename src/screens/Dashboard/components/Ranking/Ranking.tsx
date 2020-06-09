@@ -4,7 +4,15 @@ import User from '../User';
 
 import rankingIcon from '../../../../icons/ranking.svg';
 
-const Ranking: FC = () => (
+interface Props {
+	users: {
+		avatar: string
+		github_username: string
+		score: number
+	}[]
+}
+
+const Ranking: FC<Props> = ({ users }) => (
 	<>
 		<section className="rounded-t-lg px-6 custom-col">
 			<header className="py-4 flex justify-between items-center">
@@ -25,8 +33,13 @@ const Ranking: FC = () => (
 			</span>
 		</div>
 		<section className="flex flex-col justify-center custom-col">
-			<User />
-			<User />
+			{users.map(u => (
+				<User 
+					key={u.github_username} 
+					name={u.github_username} 
+					score={u.score} 
+					avatar={u.avatar} />
+				))}
 		</section>
 	</>
 );

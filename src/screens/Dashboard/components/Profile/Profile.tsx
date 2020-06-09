@@ -33,7 +33,7 @@ const Profile: FC<Props> = ({ name, avatar, achievements }) => {
 						<div className="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
 							<img
 								src={avatar || "https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"}
-								alt="lovely avatar"
+								alt="avatar"
 								className="object-cover object-center w-full h-full visible group-hover:hidden"
 							/>
 						</div>
