@@ -2,7 +2,29 @@ import React, { FC } from 'react';
 
 import ProgressBar from '../ProgressBar';
 
-const Profile: FC = () => {
+interface Achievements {
+	locked: Achievement[],
+	unlocked: Achievement[]
+}
+
+interface Achievement {
+  title: string;
+  description: string;
+  image?: string;
+  score: number;
+}
+
+interface Props {
+	name: string,
+	avatar: string,
+	achievements: Achievements
+}
+
+const Profile: FC<Props> = ({ name, avatar, achievements }) => {
+	const unlocked = achievements.unlocked.length
+	const totalLength = unlocked + achievements.locked.length
+	const percentage = (unlocked * 100 / totalLength).toFixed(0)
+
 	return (
 		<div className="rounded-tl-lg px-6 custom-col">
 			<section>
@@ -10,7 +32,7 @@ const Profile: FC = () => {
 					<div className="w-24 h-24 relative mr-5">
 						<div className="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
 							<img
-								src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+								src={avatar || "https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"}
 								alt="lovely avatar"
 								className="object-cover object-center w-full h-full visible group-hover:hidden"
 							/>
@@ -21,7 +43,7 @@ const Profile: FC = () => {
 							Good morning
 						</div>
 						<div className="text-3xl text-white font-bold font-circular">
-							Taylor Kang
+							{name}
 						</div>
 					</div>
 				</div>
@@ -39,10 +61,10 @@ const Profile: FC = () => {
 								Achievements
 							</span>
 							<span className="text-lg text-white font-medium  opacity-25">
-								65%
+								{percentage}%
 							</span>
 						</div>
-						<ProgressBar color="bg-blue-500" progress={45} />
+						<ProgressBar color="bg-blue-500" progress={Number(percentage)} />
 					</div>
 				</div>
 			</section>

@@ -9,11 +9,28 @@ import achievementIcon from '../../../../icons/achievement.svg';
 enum Tabs {
 	Unlocked = 'Unlocked',
 	Locked = 'Locked',
-	Hidden = 'Hidden',
 }
 
-const Achievements: FC<{}> = () => {
-	const [activeTab, setActiveTab] = useState<Tabs>(Tabs.Locked);
+interface Achievement {
+  title: string;
+  description: string;
+  image?: string;
+  score: number;
+}
+
+interface Props {
+	achievements: {
+		locked: Achievement[],
+		unlocked: Achievement[]
+	}
+}
+
+const Achievements: FC<Props> = ({ achievements }) => {
+	const [activeTab, setActiveTab] = useState<Tabs>(Tabs.Unlocked);
+
+	const unlocked = achievements.unlocked.length
+	const totalLength = unlocked + achievements.locked.length
+	const percentage = (unlocked * 100 / totalLength).toFixed(0)
 
 	const handleSelect = (e: React.MouseEvent<HTMLElement>) =>
 		setActiveTab((e.target as any).dataset.id);
@@ -30,10 +47,10 @@ const Achievements: FC<{}> = () => {
 					</div>
 					<div className="space-y-4">
 						<div className="text-md text-white font-semibold">
-							150 of 250 (60%) Achievements Done
+							{unlocked} of {totalLength} ({percentage}%) Achievements Done
 						</div>
 						<div>
-							<ProgressBar color="bg-teal-400" progress={60} />
+							<ProgressBar color="bg-teal-400" progress={Number(percentage)} />
 						</div>
 					</div>
 				</header>
@@ -51,9 +68,30 @@ const Achievements: FC<{}> = () => {
 				</div>
 				<section>
 					<div className="space-y-6 flex flex-col justify-center">
-						<Achievement unlocked />
-						<Achievement />
-						<Achievement hidden />
+						{activeTab === Tabs.Unlocked && (
+							achievements.unlocked.length === 0 
+								? <div>No sacaste nada pa</div>
+								: achievements.unlocked.map(a => (
+									<Achievement 
+										key={a.title}
+										image={a.image} 
+										title={a.title} 
+										description={a.description} 
+										unlocked />
+								))
+						)}
+
+						{activeTab === Tabs.Locked && (
+							achievements.locked.length === 0 
+								? <div>Sacaste todo pa</div>
+								: achievements.locked.map(a => (
+									<Achievement 
+										key={a.title}
+										image={a.image} 
+										title={a.title} 
+										description={a.description} />
+								))
+						)}
 					</div>
 				</section>
 			</section>
