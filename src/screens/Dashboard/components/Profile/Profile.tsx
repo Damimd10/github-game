@@ -4,7 +4,29 @@ import ProgressBar from '../ProgressBar';
 
 import locationIcon from '../../../../icons/location.svg';
 
-const Profile: FC = () => {
+interface Achievements {
+	locked: Achievement[];
+	unlocked: Achievement[];
+}
+
+interface Achievement {
+	title: string;
+	description: string;
+	image?: string;
+	score: number;
+}
+
+interface Props {
+	name: string;
+	avatar: string;
+	achievements: Achievements;
+}
+
+const Profile: FC<Props> = ({ name, avatar, achievements }) => {
+	const unlocked = achievements.unlocked.length;
+	const totalLength = unlocked + achievements.locked.length;
+	const percentage = ((unlocked * 100) / totalLength).toFixed(0);
+
 	return (
 		<div className="space-y-4 rounded-tl-lg px-6 custom-col">
 			<section>
@@ -12,8 +34,11 @@ const Profile: FC = () => {
 					<div className="w-24 h-24 relative mr-5">
 						<div className="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
 							<img
-								src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-								alt="lovely avatar"
+								src={
+									avatar ||
+									'https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png'
+								}
+								alt="avatar"
 								className="object-cover object-center w-full h-full visible group-hover:hidden"
 							/>
 						</div>
@@ -23,7 +48,7 @@ const Profile: FC = () => {
 							Good morning
 						</div>
 						<div className="text-3xl text-white font-bold font-circular">
-							Taylor Kang
+							{name}
 						</div>
 					</div>
 				</div>
@@ -34,14 +59,10 @@ const Profile: FC = () => {
 			</section>
 			<section className="p-6 flex items-center justify-center border profile-box-border rounded-lg">
 				<div className="p-4 space-x-4 flex items-center rounded-lg">
-					<span className="text-lg text-gray-300">
-						254 Following
-					</span>
+					<span className="text-lg text-gray-300">254 Following</span>
 				</div>
 				<div className="p-4 space-x-4 flex items-center bg-box-blue rounded-lg">
-					<span className="text-lg text-gray-300">
-						2130 Followers
-					</span>
+					<span className="text-lg text-gray-300">2130 Followers</span>
 				</div>
 			</section>
 			<section className="p-6 border profile-box-border rounded-lg">
@@ -61,10 +82,10 @@ const Profile: FC = () => {
 								Achievements
 							</span>
 							<span className="text-lg text-white font-medium  opacity-25">
-								65%
+								{percentage}%
 							</span>
 						</div>
-						<ProgressBar color="bg-blue-500" progress={45} />
+						<ProgressBar color="bg-blue-500" progress={Number(percentage)} />
 					</div>
 				</div>
 			</section>
