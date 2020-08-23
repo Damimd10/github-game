@@ -17,12 +17,20 @@ interface Achievement {
 }
 
 interface Props {
-	name: string;
-	avatar: string;
 	achievements: Achievements;
+	avatar: string;
+	followers: number;
+	following: number;
+	name: string;
 }
 
-const Profile: FC<Props> = ({ name, avatar, achievements }) => {
+const Profile: FC<Props> = ({
+	achievements,
+	avatar,
+	followers,
+	following,
+	name,
+}) => {
 	const unlocked = achievements.unlocked.length;
 	const totalLength = unlocked + achievements.locked.length;
 	const percentage = ((unlocked * 100) / totalLength).toFixed(0);
@@ -59,10 +67,10 @@ const Profile: FC<Props> = ({ name, avatar, achievements }) => {
 			</section>
 			<section className="p-6 flex items-center justify-center border profile-box-border rounded-lg">
 				<div className="p-4 space-x-4 flex items-center rounded-lg">
-					<span className="text-lg text-gray-300">254 Following</span>
+					<span className="text-lg text-gray-300">{following} Following</span>
 				</div>
 				<div className="p-4 space-x-4 flex items-center bg-box-blue rounded-lg">
-					<span className="text-lg text-gray-300">2130 Followers</span>
+					<span className="text-lg text-gray-300">{followers} Followers</span>
 				</div>
 			</section>
 			<section className="p-6 border profile-box-border rounded-lg">

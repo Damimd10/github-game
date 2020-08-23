@@ -9,9 +9,10 @@ import Ranking from './components/Ranking';
 import './dashboard.css';
 
 interface User {
-	github_username: string;
-	avatar: string;
 	achievements: Achievements;
+	avatar: string;
+	github_username: string;
+	metrics: any;
 	score: number;
 }
 
@@ -37,6 +38,10 @@ const DashboardLayout: FC = () => {
 	useEffect(() => {
 		fetch(`http://localhost:4000/api/getUser/${login}`)
 			.then(response => response.json())
+			.then(x => {
+				console.log(x);
+				return x;
+			})
 			.then(setUser);
 	}, [login]);
 
@@ -52,13 +57,15 @@ const DashboardLayout: FC = () => {
 	}; */
 
 	return (
-		<main className="h-screen w-full flex flex-wrap tracking-wide">
+		<main className="h-full w-full flex flex-wrap tracking-wide">
 			<Column size="1/4">
 				{user && (
 					<Profile
-						name={user.github_username}
-						avatar={user.avatar}
 						achievements={user.achievements}
+						avatar={user.avatar}
+						followers={user.metrics.followers}
+						following={user.metrics.following}
+						name={user.github_username}
 					/>
 				)}
 			</Column>
